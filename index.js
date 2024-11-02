@@ -30,6 +30,8 @@ mongoose.connect(MONGODB_URI, {
 
 // Get all jobs
 app.get('/jobs', async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "https://jobs-repo.netlify.app/"); // Set this to your frontend URL
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   try {
     const jobs = await Job.find().limit(100);
     res.json(jobs);
