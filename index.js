@@ -31,7 +31,7 @@ mongoose.connect(MONGODB_URI, {
 // Get all jobs
 app.get('/jobs', async (req, res) => {
   try {
-    const jobs = await Job.find();
+    const jobs = await Job.find().limit(100);
     res.json(jobs);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching jobs' });
