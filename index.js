@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://your-vite-frontend-url.vercel.app'], // Replace with your frontend URLs
+  origin: ['http://localhost:5173', 'https://jobs-repo.netlify.app/'], // Replace with your frontend URLs
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
